@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: chekwe
+      POSTGRES_PASSWORD: chekwe
+      POSTGRES_DB: chekwe
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chekwe"]
+      interval: 5s
+  backend:
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://chekwe:chekwe@db:5432/chekwe
+    depends_on:
+      db: {condition: service_healthy}
+    ports: ["8000:8000"]
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["5173:80"]
+volumes:
+  pgdata:
