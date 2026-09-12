@@ -36,3 +36,4 @@ cd ../frontend && npm install && npm run dev   # UI on :5173
 ```
 Login:  admin / admin123!  (change immediately). Run pytest in  backend/ . Or:  docker compose up --build .
 ___
+Chekwaa sistemụ gị ugbu a
