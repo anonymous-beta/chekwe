@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.svg" alt="Project Logo" width="200" height="auto" />
+  <img src="CHEKWE_logo.svg" alt="chekwe" width="200" height="auto" />
 </p>
 
 # CHEKWE — Security Operations & Defense Platform
